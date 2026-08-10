@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 09:17:36 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/10 10:19:54 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/10 11:05:41 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -28,7 +28,6 @@ int	*ft_range(int min, int max)
 		min++;
 		i++;
 	}
-	arr[i] = '\0';
 	return (arr);
 }
 /*#include <stdio.h>
