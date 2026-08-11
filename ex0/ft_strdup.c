@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 08:56:28 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/10 09:16:09 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/11 17:59:58 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -16,6 +16,8 @@ char	*ft_strdup(char *src)
 	int		index;
 	char	*dup;
 
+	if (!src)
+		return (NULL);
 	index = 0;
 	while (src[index])
 		index++;
