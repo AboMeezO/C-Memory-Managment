@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 14:45:13 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/12 23:43:46 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/12 23:52:25 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	isvalidbase(char *base)
 	{
 		if (base[index] == '+' || base[index] == '-'
 			|| base[index] <= 32)
-			return (NULL);
+			return (0);
 		compare_index = 0;
 		while (base[compare_index])
 		{
 			if (base[compare_index] == base[index])
-				return (null);
+				return (0);
 			compare_index++;
 		}
 		index++;
@@ -59,14 +59,14 @@ int	getdigit(char characters, char *base)
 	return (-1);
 }
 
-int	getsign(char *number, char *index)
+int	getsign(char *number, int *index)
 {
 	int	sign;
 
 	sign = 1;
 	while (number[*index] == ' '
 		|| (number[*index] >= 9 && 13 >= number[*index]))
-		*index++;
+		(*index)++;
 	while (number[*index] == '+' || number[*index] == '-')
 	{
 		if (number[*index] == '-')
