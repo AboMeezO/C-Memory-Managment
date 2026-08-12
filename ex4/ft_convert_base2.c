@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 14:45:13 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/12 23:52:25 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 00:46:31 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	isvalidbase(char *base)
 	int	index;
 	int	compare_index;
 
-	if (getlength(base) < 0)
+	if (getlength(base) < 2)
 		return (0);
 	index = 0;
 	while (base[index])
@@ -33,7 +33,7 @@ int	isvalidbase(char *base)
 		if (base[index] == '+' || base[index] == '-'
 			|| base[index] <= 32)
 			return (0);
-		compare_index = 0;
+		compare_index = index + 1;
 		while (base[compare_index])
 		{
 			if (base[compare_index] == base[index])
