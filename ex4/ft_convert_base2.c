@@ -6,22 +6,72 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 14:45:13 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/11 17:31:27 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/12 23:43:46 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*hexaToDecimal(char *number)
+int	getlength(char *str)
 {
-	char	result;
-	char	hex;
-	char	index;
+	int	length;
 
-	hex = "0123456789abcdef";
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
+}
+
+int	isvalidbase(char *base)
+{
+	int	index;
+	int	compare_index;
+
+	if (getlength(base) < 0)
+		return (0);
 	index = 0;
-	while (number[index])
+	while (base[index])
 	{
-		result[index] = hex[number[index] / 16];
+		if (base[index] == '+' || base[index] == '-'
+			|| base[index] <= 32)
+			return (NULL);
+		compare_index = 0;
+		while (base[compare_index])
+		{
+			if (base[compare_index] == base[index])
+				return (null);
+			compare_index++;
+		}
 		index++;
 	}
-	return (result);
+	return (1);
+}
+
+int	getdigit(char characters, char *base)
+{
+	int	index;
+
+	index = 0;
+	while (base[index])
+	{
+		if (base[index] == characters)
+			return (index);
+		index++;
+	}
+	return (-1);
+}
+
+int	getsign(char *number, char *index)
+{
+	int	sign;
+
+	sign = 1;
+	while (number[*index] == ' '
+		|| (number[*index] >= 9 && 13 >= number[*index]))
+		*index++;
+	while (number[*index] == '+' || number[*index] == '-')
+	{
+		if (number[*index] == '-')
+			sign *= -1;
+		(*index)++;
+	}
+	return (sign);
 }
