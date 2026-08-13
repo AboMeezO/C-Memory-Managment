@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:54:08 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/13 18:07:23 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 20:50:11 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -86,13 +86,13 @@ char	*decimal_to_base(int number, char *base)
 	return (result);
 }
 
-char	*ft_convert_base(char *number, char *base_from, char *base_to)
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	int	decimal_number;
 
 	if (!is_valid_base(base_to) || !is_valid_base(base_from))
 		return (NULL);
-	decimal_number = base_to_decimal(number, base_from);
+	decimal_number = base_to_decimal(nbr, base_from);
 	return (decimal_to_base(decimal_number, base_to));
 }
 /*
