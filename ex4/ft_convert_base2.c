@@ -6,11 +6,11 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 14:45:13 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/13 00:46:31 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 06:11:25 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	getlength(char *str)
+int	get_length(char *str)
 {
 	int	length;
 
@@ -20,12 +20,12 @@ int	getlength(char *str)
 	return (length);
 }
 
-int	isvalidbase(char *base)
+int	is_valid_base(char *base)
 {
 	int	index;
 	int	compare_index;
 
-	if (getlength(base) < 2)
+	if (get_length(base) < 2)
 		return (0);
 	index = 0;
 	while (base[index])
@@ -45,7 +45,7 @@ int	isvalidbase(char *base)
 	return (1);
 }
 
-int	getdigit(char characters, char *base)
+int	get_digit(char characters, char *base)
 {
 	int	index;
 
@@ -59,7 +59,7 @@ int	getdigit(char characters, char *base)
 	return (-1);
 }
 
-int	getsign(char *number, int *index)
+int	get_sign(char *number, int *index)
 {
 	int	sign;
 

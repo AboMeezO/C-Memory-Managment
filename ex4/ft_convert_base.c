@@ -6,15 +6,15 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:54:08 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/13 00:47:12 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 06:15:07 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int	getlength(char *str);
-int	isvalidbase(char *base);
-int	getdigit(char characters, char *base);
-int	getsign(char *number, int *index);
+int	get_length(char *str);
+int	is_valid_base(char *base);
+int	get_digit(char characters, char *base);
+int	get_sign(char *number, int *index);
 
 int	base_to_decimal(char *number, char *base )
 {
@@ -26,11 +26,11 @@ int	base_to_decimal(char *number, char *base )
 
 	index = 0;
 	result = 0;
-	baselength = getlength(base);
-	sign = getsign(number, &index);
+	baselength = get_length(base);
+	sign = get_sign(number, &index);
 	while (number[index])
 	{
-		digit = getdigit(number[index], base);
+		digit = get_digit(number[index], base);
 		if (digit < 0)
 			break ;
 		result = result * baselength + digit;
@@ -63,7 +63,7 @@ char	*decimal_to_base(int number, char *base)
 	int	baselength;
 	int	index;
 
-	baselength = getlength(base);
+	baselength = get_length(base);
 	result = malloc(sizeof(char)
 		* (count_digits(number, baselength) + 1));
 	if (!result)
@@ -90,7 +90,7 @@ char	*ft_convert_base(char *number, char *base_from, char *base_to)
 {
 	int	decimalNumber;
 
-	if (!isvalidbase(base_to) || !isvalidbase(base_from))
+	if (!is_valid_base(base_to) || !is_valid_base(base_from))
 		return (NULL);
 	decimalNumber = base_to_decimal(number, base_from);
 	return (decimal_to_base(decimalNumber, base_to));
@@ -98,7 +98,7 @@ char	*ft_convert_base(char *number, char *base_from, char *base_to)
 }
 
 #include <stdio.h>
-int	main(void)
+/*int	main(void)
 {
 	char	*result;
 
@@ -119,4 +119,4 @@ int	main(void)
 	free(result);
 
 	return (0);
-}
+}*/
