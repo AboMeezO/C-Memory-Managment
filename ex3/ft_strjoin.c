@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 16:21:05 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/11 01:48:06 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 15:29:59 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -93,11 +93,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 int	main(void)
 {
 	char	*result;
-	char	*strs1[] = {"Hello", "world", "42"};
-	char	*strs2[] = {"Hello", "world", "42"};
-	char	*strs3[] = {"Hello"};
-	char	*strs4[] = {"", "Hello", "", "world"};
-	char	*strs5[] = {"Hello", "world"};
+	char	*strs1[] = {"Over", "and", "over"};
+	char	*strs2[] = {"i", "keep", "going"};
+	char	*strs3[] = {"over"};
+	char	*strs4[] = {"", "the ", "", "world"};
+	char	*strs5[] = {"we", "knew"};
 
 	result = ft_strjoin(3, strs1, ", ");
 	printf("Test 1: %s\n", result);
