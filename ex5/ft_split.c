@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 07:33:42 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/13 09:33:18 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 09:40:28 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -103,7 +103,7 @@ char	**ft_split(char *str, char *charset)
 	result[index_word] = 0;
 	return (result);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -120,4 +120,4 @@ int	main(void)
 	}
 	free(result);
 	return (0);
-}
+}*/
