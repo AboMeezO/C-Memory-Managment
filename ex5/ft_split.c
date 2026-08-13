@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 07:33:42 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/13 09:40:28 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/13 18:51:18 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -110,7 +110,8 @@ int	main(void)
 	char	**result;
 	int		index;
 
-	result = ft_split("But, all of that was!!ripped .apart ,when you refused to fight", ",!");
+	result = ft_split("But, all of that was!!
+	ripped .apart ,when you refused to fight", ",!");
 	index = 0;
 	while (result[index])
 	{
