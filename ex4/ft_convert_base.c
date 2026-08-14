@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:54:08 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/13 20:50:11 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/14 06:30:24 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -57,6 +57,19 @@ int	count_digits(int number, int baselength)
 	return (digitcount);
 }
 
+void	revers_result(char *result, int start, int end)
+{
+	char	temp;
+
+	while (start < end)
+	{
+		temp = result[start];
+		result[start] = result[end];
+		result[end] = temp;
+		start++;
+		end--;
+	}
+}
 char	*decimal_to_base(int number, char *base)
 {
 	char	*result;
@@ -88,14 +101,24 @@ char	*decimal_to_base(int number, char *base)
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int	decimal_number;
+	int		decimal_number;
+	int		length;
+	char	*result;
 
 	if (!is_valid_base(base_to) || !is_valid_base(base_from))
 		return (NULL);
 	decimal_number = base_to_decimal(nbr, base_from);
-	return (decimal_to_base(decimal_number, base_to));
+	result = decimal_to_base(decimal_number , base_to);
+	if (!result)
+		return (0);
+	length = get_length(result);
+	if (result[0] == '-')
+		revers_result(result, 1, length - 1);
+	else
+		revers_result(result, 0, length - 1);
+	return (result);
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -117,5 +140,9 @@ int	main(void)
 	printf("-42 (decimal) -> %s (binary)\n", result);
 	free(result);
 
+	result = ft_convert_base("1479280589", "0123456789", "01");
+	printf("0123456789 (decimal) -> %s (binary)\n", result);
+	free(result);
+
 	return (0);
-}*/
+}
