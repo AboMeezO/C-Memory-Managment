@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:54:08 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/14 06:30:24 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/16 13:01:03 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -118,7 +118,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		revers_result(result, 0, length - 1);
 	return (result);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -145,4 +145,4 @@ int	main(void)
 	free(result);
 
 	return (0);
-}
+}*/
