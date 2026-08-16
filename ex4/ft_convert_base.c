@@ -6,7 +6,7 @@
 /*   By: mohammah <mohammah@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 08:54:08 by mohammah          #+#    #+#             */
-/*   Updated: 2026/08/16 13:01:03 by mohammah         ###   ########.fr       */
+/*   Updated: 2026/08/16 14:16:26 by mohammah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -70,6 +70,7 @@ void	revers_result(char *result, int start, int end)
 		end--;
 	}
 }
+
 char	*decimal_to_base(int number, char *base)
 {
 	char	*result;
@@ -108,7 +109,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	if (!is_valid_base(base_to) || !is_valid_base(base_from))
 		return (NULL);
 	decimal_number = base_to_decimal(nbr, base_from);
-	result = decimal_to_base(decimal_number , base_to);
+	result = decimal_to_base(decimal_number, base_to);
 	if (!result)
 		return (0);
 	length = get_length(result);
